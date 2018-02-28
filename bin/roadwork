@@ -95,6 +95,7 @@ ARGV.options do |opt|
       aws_opts[:credentials] = provider
     end
 
+    aws_opts[:retry_limit] = 9
     Aws.config.update(aws_opts)
   rescue => e
     $stderr.puts e
